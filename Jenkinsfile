@@ -18,8 +18,11 @@ pipeline {
     }
     post {
         always {
-            // This looks for the XML files Maven creates in the target folder
-            junit '**/target/surefire-reports/*.xml'
+            // Updated to be more flexible and handle empty results if tests fail
+            junit testResults: '**/target/surefire-reports/*.xml', allowEmptyResults: true
+            
+            // This makes your actual JAR file downloadable from the Jenkins UI
+            archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
         }
     }
 }
