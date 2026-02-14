@@ -18,11 +18,9 @@ pipeline {
     }
     post {
         always {
-            // Updated to be more flexible and handle empty results if tests fail
-            junit testResults: '**/target/surefire-reports/*.xml', allowEmptyResults: true
-            
-            // This makes your actual JAR file downloadable from the Jenkins UI
-            archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
+            // THIS IS THE PART JENKINS IS MISSING
+            junit '**/target/surefire-reports/*.xml'
+            echo 'Recording Test Results...'
         }
     }
 }
