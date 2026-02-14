@@ -26,3 +26,27 @@ Spring-Boot-Demo/
 ├── pom.xml                                   # Maven Configuration
 ├── Jenkinsfile                               # Jenkins Pipeline Script
 └── README.md                                 # Project Documentation
+📊 Pipeline Stages
+Checkout: Pulls the latest code from the GitHub repository.
+
+Echo Version: Displays Maven and Java versions to verify the environment.
+
+Build & Test: Compiles the Java source code and runs the JUnit test cases.
+
+Post Actions: - Records JUnit test results.
+
+Archives the generated JAR file for deployment.
+
+📸 Screenshots of Results
+1. Jenkins Build Success
+This shows the successful completion of the pipeline with a "Blue/Green" status.
+
+2. Maven Test Execution (Console Output)
+Evidence of the Calculator logic being tested: Testing addition: 2 + 3 = 5.
+
+3. JUnit Test Report
+Detailed breakdown showing that 100% of the test cases passed.
+
+Developed by: [Your Name/Divyakottargi]
+
+Date: February 2026
